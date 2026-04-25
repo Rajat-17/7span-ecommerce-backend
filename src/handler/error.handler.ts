@@ -1,5 +1,5 @@
 export const errorHandler = (err: any, res: any) => {
-  console.error("ERROR:", err);
+  // console.error("ERROR in Handler:", JSON.stringify(err));
 
   const statusCode = err.statusCode || 500;
 
