@@ -5,12 +5,12 @@ export const authorizeRoles = (...roles: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     console.log("Authorizing roles:", roles);
     console.log("User from request:", req.headers);
+    // @ts-expect-error - user is added to req in auth middleware
+    const user = req.user;
 
-    const user = null;
-
-    // if (!user || !user.role || !roles.includes(user.role)) {
-    //   throw new AppError("Unauthorized: Access denied", 401);
-    // }
+    if (!user || !user.role || !roles.includes(user.role)) {
+      throw new AppError("Unauthorized: Access denied", 401);
+    }
 
     next();
   };
