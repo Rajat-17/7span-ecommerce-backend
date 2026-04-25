@@ -12,6 +12,6 @@ export const authorizeRoles = (...roles: string[]) => {
       throw new AppError("Unauthorized: Access denied", 401);
     }
 
-    next();
+    return next();
   };
 };
