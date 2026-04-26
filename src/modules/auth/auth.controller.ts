@@ -5,7 +5,6 @@ import { errorHandler } from "../../handler/error.handler";
 
 export const loginUser = async (req: Request, res: Response) => {
   try {
-    console.log("Request: ", JSON.stringify(req.body))
     const { email, password } = req.body;
 
     const result = await login(email, password);
