@@ -9,6 +9,7 @@ const router = Router();
 
 // Public
 router.post("/list", controller.getProducts);
+router.get("/:id", controller.getProductById);
 
 // Admin only
 router.post("/create", auth, authorizeRoles("admin"), validate(createProductSchema), controller.createProduct);

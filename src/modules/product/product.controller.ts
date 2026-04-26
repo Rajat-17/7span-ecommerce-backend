@@ -26,6 +26,16 @@ export const getProducts = async (req: Request, res: Response) => {
   }
 };
 
+export const getProductById = async (req: Request, res: Response) => {
+  try {
+    const result = await productService.getProductById(Number(req.params.id));
+    return successResponse(res, result, "Product fetched succefully.");
+  } catch (err) {
+    console.log("Error on fetching product: ", JSON.stringify(err))
+    return errorHandler(err, res)
+  }
+};
+
 export const updateProduct = async (req: Request, res: Response) => {
   try {
     const result = await productService.updateProduct(

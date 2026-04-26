@@ -64,6 +64,18 @@ export const getProducts = async (query: any) => {
   };
 };
 
+export const getProductById = async (id: number) => {
+  const product = await prisma.product.findUnique({
+    where: { id }
+  });
+
+  if (!product) {
+    throw new AppError("Product not found", 404);
+  }
+
+  return product;
+};
+
 export const updateProduct = async (id: number, data: any) => {
   const { categoryId } = data;
   const product = await prisma.product.findUnique({
