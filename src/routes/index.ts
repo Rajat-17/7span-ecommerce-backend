@@ -3,6 +3,7 @@ import authRoutes from "../modules/auth/auth.routes";
 import cartRoutes from "../modules/cart/cart.routes";
 import productRoutes from "../modules/product/product.routes";
 import orderRoutes from "../modules/order/order.routes";
+import categoryRoutes from "../modules/category/category.routes";
 
 
 const router = Router();
@@ -11,5 +12,6 @@ router.use("/auth", authRoutes);
 router.use("/cart", cartRoutes);
 router.use("/product", productRoutes);
 router.use("/order", orderRoutes);
+router.use("/category", categoryRoutes);
 
 export default router;

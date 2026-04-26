@@ -31,7 +31,6 @@ export const getProducts = async (query: any) => {
   if (search) {
     where.name = {
       contains: search,
-      mode: "insensitive"
     };
   }
 
