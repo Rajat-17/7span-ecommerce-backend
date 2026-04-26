@@ -1,4 +1,4 @@
-(# 7span E-commerce Backend
+# 7span E-commerce Backend
 
 This repository contains the backend for the 7span e-commerce application (TypeScript + Express + Prisma).
 
@@ -107,6 +107,3 @@ Another quick check: open a browser and visit `http://localhost:5000/api/product
 - After running `npm run dev`, confirm the server log and run the verification curl/Invoke-RestMethod above.
 
 ---
-
-If you'd like, I can add a simple `/health` endpoint to `src/app.ts` (so checks are easier in a browser), or add an npm script for seeding. Want me to add either of those? 
-)
